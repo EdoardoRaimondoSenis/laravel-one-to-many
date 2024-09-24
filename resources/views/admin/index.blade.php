@@ -14,6 +14,7 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><a href="{{ route('admin.posts.index') }}">Lista</a></li>
             <li class="list-group-item"><a href="{{ route('admin.posts.create') }}">Crea</a></li>
+            <li class="list-group-item"><a href="{{ route('admin.typePosts') }}">Post raggruppato in categorie</a></li>
         </ul>
     </body>
     </html>

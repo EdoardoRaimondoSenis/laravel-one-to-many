@@ -5,6 +5,7 @@ use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\TypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::middleware(['auth', 'verified'])
         ->name('admin.')
         ->group(function(){
             Route::get('/', [DashboardController::class, 'index'])->name('home');
+            Route::get('type-post', [TypeController::class, 'typePosts'])->name('typePosts');
             Route::resource('posts', PostController::class);
         });
 

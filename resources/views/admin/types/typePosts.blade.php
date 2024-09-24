@@ -1,7 +1,8 @@
 @extends('layouts.app')
+
 @section('content')
     <div class="container">
-        <h1 class="mt-5">Elenco Posts</h1>
+        <h1 class="mt-5">Elenco Categorie</h1>
         
         @if (session('deleted'))
             <div class="alert alert-success">
@@ -12,24 +13,12 @@
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Titolo</th>
-                <th scope="col">Argomento</th>
-                <th scope="col">Data di inizio</th>
-                <th scope="col">Data di fine</th>
-                <th scope="col">Collaboratori</th>
-                <th scope="col">Categoria</th>
+                <th scope="col">Categorie</th>
               </tr>
             </thead>
             <tbody>
                 @foreach ($posts as $post)
                 <tr>
-                    <th scope="row">{{ $post->id }}</th>
-                    <td>{{ $post->title }}</td>
-                    <td>{{ $post->argument }}</td>
-                    <td>{{ $post->start_date }}</td>
-                    <td>{{ $post->end_date }}</td>
-                    <td>{{ $post->collaborators }}</td>
                     <td><span class="badge text-bg-success">{{ $post->type->name }}</span></td>
                     <td>
                         <a href="{{ route('admin.posts.show', ['post' => $post->id]) }}" class="btn btn-primary">Dettagli</a>
