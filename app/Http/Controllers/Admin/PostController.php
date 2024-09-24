@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Requests\PostsRequest;
+use App\Models\Type;
 
 class PostController extends Controller
 {
@@ -23,7 +24,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $types = Type::all();
+        return view('admin.posts.create', compact('types'));
     }
 
     /**

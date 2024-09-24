@@ -20,6 +20,13 @@
         @error('title')
             <div class="alert alert-danger error">{{ $message }}</div>
         @enderror
+
+        <label class="form-label" for="type">Tipo</label>
+        <select class="form-select" aria-label="Default select example" name="type" id="type">
+            @foreach ($types as $type)
+                <option value="{{ $type->id }}">{{ $type->name }}</option>
+            @endforeach
+        </select>
     
         <label class="form-label" for="start_date">Data di inizio</label>
         <input class="form-control" type="date" name="start_date" id="start_date" required>

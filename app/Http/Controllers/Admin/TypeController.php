@@ -66,9 +66,8 @@ class TypeController extends Controller
     }
 
     public function typePosts() {
-        $posts = Post::orderBy('id')->get();
         $types = Type::all();
-        dump($types);
-        return view('admin.types.typePosts', compact('posts'));
+        
+        return view('admin.types.typePosts', compact('types'));
     }
 }
