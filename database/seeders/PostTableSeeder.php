@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Post;
+use App\Models\Type;
 use Faker\Generator as Faker;
 
 class PostTableSeeder extends Seeder
@@ -15,6 +16,7 @@ class PostTableSeeder extends Seeder
     public function run(Faker $faker): void {
         for ($i = 0; $i < 50; $i++) {
             $newPost = new Post();
+            $newPost->type_id = Type::inRandomOrder()->first()->id;
             $newPost->title = $faker->sentence(3);
             $newPost->argument = $faker->paragraph(5);
             $newPost->start_date = $faker->date();

@@ -9,5 +9,9 @@ class Post extends Model
 {
     use HasFactory;
 
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
+
     protected $fillable = ['title', 'argument', 'start_date', 'end_date', 'number_of_posts', 'collaborators'];
 }
